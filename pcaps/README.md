@@ -42,7 +42,7 @@ therefore it is possible to easily reconstruct their content.**
   **2**
 12. Briefly describe how you found the username-password pairs.
 
-  **I used ettercap to read the pcap and then grep to find plaintext username/password pairs. **
+  **I used ettercap to read the pcap and then grep to find plaintext username/password pairs.**
 13. For each of the plaintext username-password pair that you found, identify the protocol used, server IP, the corresponding domain name (e.g., google.com), and port number.
 
     1. username: 1, 
@@ -60,7 +60,7 @@ therefore it is possible to easily reconstruct their content.**
 
 14. Of all the plaintext username-password pairs that you found, how many of them are legitimate? That is, the username-password was valid, access successfully granted?
 
-  **The first was invalid and the second was valid. **
+  **The first was invalid and the second was valid.**
 
 15. How did you verify the successful username-password pairs?
   **I went into wireshark and filtered by IP address. Then I followed the TCP stream to determine if the call was successful.** 
