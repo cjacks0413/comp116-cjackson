@@ -5,7 +5,7 @@ Professor: Ming Chow
 
 ### set1.pcap
 1. How many packets are there in this set?   
-  **150**
+  **1503**
 
 2. What protocol was used to transfer files from PC to server?
 
