@@ -40,11 +40,7 @@ Piazza/Ming
 2. If you have spare time in the future, what would you add to the program or do differently with regards to detecting incidents? 
 
    - More nmap detection to the packet scanners, especially targeted at some of the "stealthier" 
-   scanning techniques, including: 
-        - TCP FIN
-	     - FTP bounce
-	     - TCP connect scanning
-	     - Fragmentation scanning
+   scanning techniques, including: TCP FIN scan, FTP bounce, TCP connect scanning, and fragmentation scanning.
    - An option for some quick self-analysis, printing out basic stats about the state of the
    current machine and network the machine is on. I would especially attempt to point out ports that are
    unnecessarily open and identify if the machine is insecurely using VNC.
