@@ -102,7 +102,7 @@ end
  
 case ARGV.size 
 when 0
-#	analyzePacketStream 
+	analyzePacketStream 
 when 1 
 	puts "Invalid Input. Usage: sudo ruby alarm.rb OR sudo ruby alarm.rb -r [INPUT_FILE]"
 when 2 
