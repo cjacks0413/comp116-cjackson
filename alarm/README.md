@@ -42,9 +42,9 @@ Piazza/Ming
    - More nmap detection to the packet scanners, especially targeted at some of the "stealthier" 
    scanning techniques, including: 
         - TCP FIN
-	- FTP bounce
-	- TCP connect scanning
-	- Fragmentation scanning. 
+	     - FTP bounce
+	     - TCP connect scanning
+	     - Fragmentation scanning
    - An option for some quick self-analysis, printing out basic stats about the state of the
    current machine and network the machine is on. I would especially attempt to point out ports that are
    unnecessarily open and identify if the machine is insecurely using VNC.
