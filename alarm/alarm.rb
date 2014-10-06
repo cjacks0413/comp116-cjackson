@@ -1,6 +1,12 @@
+### Alarm.rb
+### Cameron Jackson, comp116-Security
+### October 2014, Tufts University
+##  purpose: analyze either: a live packet stream or a web server log
+##           in order to detect incidents. 
+
 require 'packetfu' 
 require 'apachelogregex'
-
+require 'base64'
 
 $incident_number = 0 
 
@@ -10,7 +16,8 @@ def printIncident(attack, source_ip, protocol, payload, isWebLog)
 	if isWebLog 
 		output += " (#{payload})"
 	else 
-            	output += " (#{payload.each_byte.map { |b| sprintf(" 0x%02X ",b) }.join})!"
+            	#output += " (#{payload.each_byte.map { |b| sprintf(" 0x%02X ",b) }.join})!"
+		output += "(#{Base64.encode64(payload)})!";  
 	end 
 	puts output 
 	$incident_number += 1 
@@ -95,7 +102,7 @@ end
  
 case ARGV.size 
 when 0
-	analyzePacketStream 
+#	analyzePacketStream 
 when 1 
 	puts "Invalid Input. Usage: sudo ruby alarm.rb OR sudo ruby alarm.rb -r [INPUT_FILE]"
 when 2 
@@ -108,24 +115,6 @@ else
 	puts "Invalid Input. Usage: sudo ruby alarm.rb OR sudo ruby alarm.rb -r [INPUT_FILE]"
 end
  
-
-
-
-# test packet to play with 
-$config = PacketFu::Config.new(:iface => "eth0").config	
-p = PacketFu::TCPPacket.new(:config => $config, :flavor => "Linux")
-
-p.payload = "4117704037848040" 
-p.tcp_flags.fin = 1
-p.tcp_flags.psh = 0
-p.tcp_flags.urg = 1
-p.tcp_ecn = 0
-p.tcp_win = 8192
-p.tcp_hlen = 5
-p.tcp_src = 5555
-p.tcp_dst = 4444
-p.recalc
-p1 = p.to_s 
 
 
 
