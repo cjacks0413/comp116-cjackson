@@ -14,9 +14,8 @@ def printIncident(attack, source_ip, protocol, payload, isWebLog)
         output = "#{$incident_number}. ALERT: #{attack} is detected from "\
              "(#{source_ip}) (#{protocol}) "
 	if isWebLog 
-		output += " (#{payload})"
+		output += "(#{payload})!"
 	else 
-            	#output += " (#{payload.each_byte.map { |b| sprintf(" 0x%02X ",b) }.join})!"
 		output += "(#{Base64.encode64(payload)})!";  
 	end 
 	puts output 
