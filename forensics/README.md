@@ -15,7 +15,7 @@ Due 12/04/14
 hidden information in the picture that is different from the others. Please
 detail your steps!*
 
-We determined that b.jpg differed from the rest, isolating b.jpg using diff. Then, we used steghide to confirm that hidden data was located within b.jpg. We cracked the passphrase (“disney”) using brute force, which gave us the executable runme, which, when ran with a command line argument (our name), it said we were doing a “heckuvajob up to this point”.  
+We determined that b.jpg differed from the rest, isolating b.jpg using diff. Then, we used steghide to confirm that hidden data was located within b.jpg. We cracked the passphrase (“disney”) using brute force (see crack.sh), which gave us the executable runme, which, when ran with a command line argument (our name), it said we were doing a “heckuvajob up to this point”.  
 
 ---
 
@@ -73,7 +73,7 @@ There appear to be 17 images under the user account alejandro (a1-a17.jpg), 3 of
 
 *Are there any encrypted files? If so, list the contents and a brief description
 of how you obtained the contents.*  
-There is an encrypted file; Namely, lockbox.txt. After downloading the file’s contents, we ran the command “file lockbox.txt,” through which we learned that the file is a Zip file. After trying to unzip it with a standard unzipping program, we saw that it was password protected. Then, we used a password list along with a simple shell script to brute force the password. However, we needed to add some password guesses related to the other information found on the disk to uncover the actual password (such as ‘alejandro’, ‘ladygaga’, ‘lady’, ‘gaga’, etc.). Luckily, we found that the actual password is ‘gaga’. Entering this password unencrypted the zip file and the contents were released - a 23.5MB video file called edge.mp4 which was a music video of Lady Gaga performing.
+There is an encrypted file; Namely, lockbox.txt. After downloading the file’s contents, we ran the command “file lockbox.txt,” through which we learned that the file is a Zip file. After trying to unzip it with a standard unzipping program, we saw that it was password protected. Then, we used a password list along with a simple shell script (see crack.sh) to brute force the password. However, we needed to add some password guesses related to the other information found on the disk to uncover the actual password (such as ‘alejandro’, ‘ladygaga’, ‘lady’, ‘gaga’, etc.). Luckily, we found that the actual password is ‘gaga’. Entering this password unencrypted the zip file and the contents were released - a 23.5MB video file called edge.mp4 which was a music video of Lady Gaga performing.
 
 *Do the suspect want to go see this celebrity? If so, note the date(s) and
 location(s) where the suspect want see to the celebrity.*  
